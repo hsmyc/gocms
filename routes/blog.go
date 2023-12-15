@@ -1,15 +1,15 @@
-package routers
+package routes
 
 import (
+	"hsmyc/htmx/components"
+	"hsmyc/htmx/handlers"
 	"net/http"
 
 	"github.com/a-h/templ"
 )
 
-func init() {
-
-	t := title("Yuce's Blog")
-	index := index(t, _, _)
-	http.HandleFunc("/", templ.Handler(index))
-
+func Blog() {
+	t := components.Title("Yuce's Blog")
+	index := handlers.Index(t, nil, nil)
+	http.Handle("/", templ.Handler(index))
 }

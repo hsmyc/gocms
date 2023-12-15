@@ -1,4 +1,4 @@
-module github.com/hsmyc/templ-htmx
+module hsmyc/htmx
 
 go 1.21.0
 

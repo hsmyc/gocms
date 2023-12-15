@@ -1,14 +1,13 @@
 package main
 
-func Osso(a func(int) *int) {
-	println(a(4))
-}
-func Messo(b int) *int {
-	c := b
-	return &c
-}
+import (
+	"fmt"
+	"hsmyc/htmx/routes"
+	"net/http"
+)
+
 func main() {
-	a := 4
-	Osso(Messo)
-	println("x: ", &a)
+	routes.Blog()
+	fmt.Println("Listening on http://localhost:8080")
+	http.ListenAndServe(":8080", nil)
 }
