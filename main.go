@@ -1,22 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"io"
-	"net/http"
-
-	"github.com/a-h/templ"
-)
-
-func getHello(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("got /hello request\n")
-	io.WriteString(w, "Hello, HTTP!\n")
+func Osso(a func(int) *int) {
+	println(a(4))
+}
+func Messo(b int) *int {
+	c := b
+	return &c
 }
 func main() {
-	comp := postTodo()
-	http.Handle("/", templ.Handler(comp))
-	http.HandleFunc("/osman", getHello)
-	fmt.Println("Listening on http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
-
+	a := 4
+	Osso(Messo)
+	println("x: ", &a)
 }

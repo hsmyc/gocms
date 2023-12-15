@@ -1,17 +1,29 @@
 package main
 
-templ postTodo() {
+templ index(h templ.Component, c templ.Component, f templ.Component) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<title>Document</title>
 			<script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+			<title>yuce.dev</title>
 		</head>
 		<body>
-			<div hx-get="/osman">
-				Osman
+			<div class="header">
+				if h != nil {
+					@h
+				}
+			</div>
+			<div class="content">
+				if c != nil {
+					@c
+				}
+			</div>
+			<div class="footer">
+				if f != nil {
+					@f
+				}
 			</div>
 		</body>
 	</html>
