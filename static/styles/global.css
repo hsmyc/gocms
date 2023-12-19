@@ -30,7 +30,6 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
-  width: 100%;
   min-height: 100%;
   background-color: var(--primary);
   color: var(--third);
@@ -75,5 +74,54 @@ a {
 .navbar_item:hover {
   background-color: var(--fourth);
   color: var(--third);
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: var(--m);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--third);
+  border-radius: var(--xs);
+  padding: var(--m);
+  margin: var(--m);
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.card-title {
+  font-size: var(--l);
+  font-weight: 600;
+  margin: var(--s);
+}
+.card-text {
+  font-size: var(--m);
+  margin: var(--s);
+}
+.card-btn {
+  padding: var(--s);
+  background-color: var(--fourth);
+  color: var(--third);
+  border: none;
+  border-radius: var(--xs);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.card-btn:hover {
+  background-color: var(--secondary);
+  color: var(--fourth);
   cursor: pointer;
 }

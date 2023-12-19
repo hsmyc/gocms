@@ -1,0 +1,15 @@
+package blogcard
+
+import "hsmyc/htmx/models"
+
+templ Blogcard(blogs []models.Blogmodel) {
+	<div>
+		for _, blog := range blogs {
+			<div class="card">
+				<div class="card-title">{ blog.Title }</div>
+				<p class="card-text">{ blog.Tldr }</p>
+				<a href={ blog.Url } class="card-btn">Read More</a>
+			</div>
+		}
+	</div>
+}

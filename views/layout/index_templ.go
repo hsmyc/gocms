@@ -18,7 +18,6 @@ var navbarMenu []models.NavbarItem
 func init() {
 	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Blog", Url: "/blog"})
 	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "About", Url: "/about"})
-
 }
 
 func Index(h templ.Component, c templ.Component, f templ.Component) templ.Component {
@@ -52,7 +51,7 @@ func Index(h templ.Component, c templ.Component, f templ.Component) templ.Compon
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title></head><body><div class=\"header\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title></head><body><div class=\"container\"><div class=\"header\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -86,7 +85,7 @@ func Index(h templ.Component, c templ.Component, f templ.Component) templ.Compon
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

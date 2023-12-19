@@ -24,21 +24,23 @@ templ Index(h templ.Component, c templ.Component, f templ.Component) {
 			<title>yuce.dev</title>
 		</head>
 		<body>
-			<div class="header">
-				@navbar.Navbar(navbarMenu)
-				if h != nil {
-					@h
-				}
-			</div>
-			<div class="content">
-				if c != nil {
-					@c
-				}
-			</div>
-			<div class="footer">
-				if f != nil {
-					@f
-				}
+			<div class="container">
+				<div class="header">
+					@navbar.Navbar(navbarMenu)
+					if h != nil {
+						@h
+					}
+				</div>
+				<div class="content">
+					if c != nil {
+						@c
+					}
+				</div>
+				<div class="footer">
+					if f != nil {
+						@f
+					}
+				</div>
 			</div>
 		</body>
 	</html>
