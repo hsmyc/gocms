@@ -1,3 +1,17 @@
+:root {
+  --primary: #132043;
+  --secondary: #bad7e9;
+  --third: #fcffe7;
+  --fourth: #eb455f;
+  --xs: 0.25rem;
+  --s: 0.5rem;
+  --sm: 0.75rem;
+  --m: 1rem;
+  --ml: 1.25rem;
+  --l: 1.5rem;
+  --xl: 2rem;
+  --xxl: 3rem;
+}
 * ::before,
 ::after {
   box-sizing: border-box;
@@ -8,6 +22,7 @@ html {
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
 }
 body {
   display: flex;
@@ -15,7 +30,10 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
+  width: 100%;
   min-height: 100%;
+  background-color: var(--primary);
+  color: var(--third);
 }
 
 p {
@@ -33,4 +51,29 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+.header {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--m);
+}
+.navbar_items {
+  display: flex;
+  gap: var(--s);
+}
+.navbar_item {
+  padding: var(--s);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar_item:hover {
+  background-color: var(--fourth);
+  color: var(--third);
+  cursor: pointer;
 }

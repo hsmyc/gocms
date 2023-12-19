@@ -1,15 +1,13 @@
 package routes
 
 import (
-	"hsmyc/htmx/views/components/blogpage"
-	"hsmyc/htmx/views/layout"
+	"hsmyc/htmx/handlers"
 	"net/http"
 
 	"github.com/a-h/templ"
 )
 
 func Blog() {
-	t := blogpage.Title("Yuce's Blog")
-	index := layout.Index(t, nil, nil)
+	index := handlers.BlogHandler()
 	http.Handle("/blog", templ.Handler(index))
 }

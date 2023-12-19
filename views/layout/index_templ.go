@@ -10,6 +10,17 @@ import "context"
 import "io"
 import "bytes"
 
+import "hsmyc/htmx/views/components/navbar"
+import "hsmyc/htmx/models"
+
+var navbarMenu []models.NavbarItem
+
+func init() {
+	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Blog", Url: "/blog"})
+	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "About", Url: "/about"})
+
+}
+
 func Index(h templ.Component, c templ.Component, f templ.Component) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
@@ -42,6 +53,10 @@ func Index(h templ.Component, c templ.Component, f templ.Component) templ.Compon
 			return templ_7745c5c3_Err
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</title></head><body><div class=\"header\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = navbar.Navbar(navbarMenu).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

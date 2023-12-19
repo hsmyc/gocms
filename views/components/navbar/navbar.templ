@@ -1,13 +1,20 @@
 package navbar
 
-templ Navbar(menu []string) {
+import "hsmyc/htmx/models"
+
+templ Navbar(menu []models.NavbarItem) {
 	<div class="navbar">
 		<div>
-			<img src="/static/images/yuce.svg"/>
+			<a href="/">
+				<img src="/static/images/yuce.svg"/>
+			</a>
 		</div>
-		<h1>Hi is a greatest zizerans</h1>
-		for _, item := range menu {
-			<div class="navbar_item">{ item }</div>
-		}
+		<div class="navbar_items">
+			for _, item := range menu {
+				<div class="navbar_item">
+					<a href={ item.Url }>{ item.Title }</a>
+				</div>
+			}
+		</div>
 	</div>
 }

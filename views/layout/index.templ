@@ -1,5 +1,15 @@
 package layout
 
+import "hsmyc/htmx/views/components/navbar"
+import "hsmyc/htmx/models"
+
+var navbarMenu []models.NavbarItem
+
+func init() {
+	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Blog", Url: "/blog"})
+	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "About", Url: "/about"})
+}
+
 templ Index(h templ.Component, c templ.Component, f templ.Component) {
 	<!DOCTYPE html>
 	<html lang="en">
@@ -15,6 +25,7 @@ templ Index(h templ.Component, c templ.Component, f templ.Component) {
 		</head>
 		<body>
 			<div class="header">
+				@navbar.Navbar(navbarMenu)
 				if h != nil {
 					@h
 				}

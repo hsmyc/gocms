@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"hsmyc/htmx/views/components/navbar"
 	"hsmyc/htmx/views/layout"
 	"net/http"
 
@@ -9,11 +8,6 @@ import (
 )
 
 func Index() {
-	var navbarMenu []string
-	navbarMenu = append(navbarMenu, "Home")
-	navbarMenu = append(navbarMenu, "Blog")
-	navbarMenu = append(navbarMenu, "About")
-	nav := navbar.Navbar(navbarMenu)
-	index := layout.Index(nav, nil, nil)
+	index := layout.Index(nil, nil, nil)
 	http.Handle("/", templ.Handler(index))
 }
