@@ -8,6 +8,8 @@ import (
 )
 
 func Blog() {
-	index := handlers.BlogHandler()
-	http.Handle("/blog", templ.Handler(index))
+	http.HandleFunc("/blog/", func(w http.ResponseWriter, r *http.Request) {
+		title := r.URL.Path[6:]
+		templ.Handler(handlers.BlogHandler(title)).ServeHTTP(w, r)
+	})
 }

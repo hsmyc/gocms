@@ -59,7 +59,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--m);
 }
 .navbar_items {
   display: flex;
@@ -82,26 +81,29 @@ a {
   max-width: 1200px;
   padding: var(--m);
 }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--m);
+}
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--third);
-  border-radius: var(--xs);
-  padding: var(--m);
+  border: 1px solid var(--third);
+  border-radius: 29% 71% 58% 42% / 30% 47% 53% 70%;
+  padding: var(--xl);
   margin: var(--m);
   width: 100%;
   max-width: 400px;
   height: 100%;
   max-height: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
+  transition: border-radius 0.3s ease;
 }
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
+
 .card-title {
   font-size: var(--l);
   font-weight: 600;

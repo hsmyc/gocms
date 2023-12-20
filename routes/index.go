@@ -1,13 +1,12 @@
 package routes
 
 import (
-	"hsmyc/htmx/views/layout"
+	"hsmyc/htmx/handlers"
 	"net/http"
 
 	"github.com/a-h/templ"
 )
 
 func Index() {
-	index := layout.Index(nil, nil, nil)
-	http.Handle("/", templ.Handler(index))
+	http.Handle("/", templ.Handler(handlers.IndexHandler()))
 }

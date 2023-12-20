@@ -3,7 +3,7 @@ package blogcard
 import "hsmyc/htmx/models"
 
 templ Blogcard(blogs []models.Blogmodel) {
-	<div>
+	<div class="card-container">
 		for _, blog := range blogs {
 			<div class="card">
 				<div class="card-title">{ blog.Title }</div>
