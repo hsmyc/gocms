@@ -11,6 +11,8 @@
   --l: 1.5rem;
   --xl: 2rem;
   --xxl: 3rem;
+  --xxxl: 4rem;
+  --box-shadow: 16px 12px 0px 0px rgba(0, 0, 0, 1);
 }
 * ::before,
 ::after {
@@ -91,27 +93,23 @@ a {
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  border: 1px solid var(--third);
-  border-radius: 29% 71% 58% 42% / 30% 47% 53% 70%;
   padding: var(--xl);
-  margin: var(--m);
   width: 100%;
   max-width: 400px;
   height: 100%;
   max-height: 400px;
   transition: border-radius 0.3s ease;
+  gap: var(--m);
 }
 
 .card-title {
   font-size: var(--l);
   font-weight: 600;
-  margin: var(--s);
 }
 .card-text {
   font-size: var(--m);
-  margin: var(--s);
 }
 .card-btn {
   padding: var(--s);
@@ -126,4 +124,118 @@ a {
   background-color: var(--secondary);
   color: var(--fourth);
   cursor: pointer;
+}
+.blog_container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xxxl);
+
+  margin-top: var(--xxxl);
+}
+.blog_title {
+  font-size: var(--xxl);
+  font-weight: 600;
+  text-align: left;
+}
+.blog_info_field {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--m);
+  background-color: var(--fourth);
+  box-shadow: var(--box-shadow);
+  width: fit-content;
+  padding: var(--s);
+}
+.blog_hero {
+  display: flex;
+  gap: var(--xxl);
+}
+.blog_hero > div {
+  flex: 0.5;
+  min-height: 30rem;
+}
+.blog_hero_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blog_tag_field {
+  display: flex;
+  gap: var(--m);
+  background-color: var(--fourth);
+  box-shadow: var(--box-shadow);
+  padding: var(--s);
+  width: fit-content;
+}
+
+.blog_topics {
+  display: flex;
+  gap: var(--m);
+  background-color: var(--fourth);
+  box-shadow: var(--box-shadow);
+  padding: var(--s);
+  width: fit-content;
+}
+
+.blog_interaction {
+  display: flex;
+  gap: var(--m);
+}
+
+.blog_int_item {
+  display: flex;
+  gap: var(--s);
+  align-items: center;
+}
+/* TODO: create style for reading indicator */
+.blog_content {
+  display: flex;
+  gap: var(--xxl);
+}
+
+.blog_content_main {
+  flex: 0.7;
+}
+
+.blog_content_subheadings {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog_comment_form_field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xxl);
+}
+.blog_comment_header {
+  font-size: var(--xl);
+  font-weight: 600;
+  text-align: left;
+}
+.blog_comment_form {
+  /* TODO: create style for form */
+}
+
+.blog_comment_writer_field {
+  display: flex;
+  gap: var(--m);
+}
+
+.blog_comment_writer_left {
+  flex: 0.2;
+}
+
+.blog_comment_writer_right {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: var(--m);
+}
+
+.blog_comment_content {
+  display: flex;
+  flex-direction: column;
 }
