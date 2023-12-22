@@ -4,4 +4,5 @@ func InitializeContext() {
 	Static()
 	Blog()
 	Index()
+	CreateBlog()
 }

@@ -12,15 +12,15 @@ import (
 )
 
 func IndexHandler() templ.Component {
+
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	var blogs []models.Blogmodel
-	cur, err := blogCollection.Find(ctx, bson.M{})
-	println(cur)
+	cur, err := blogCollection.Find(ctx, bson.D{})
 	if err != nil {
 		return layout.Index(nil, nil, nil)
 	}
-	err = cur.Decode(&blogs)
+	err = cur.All(ctx, &blogs)
 
 	if err != nil {
 		return layout.Index(nil, nil, nil)
