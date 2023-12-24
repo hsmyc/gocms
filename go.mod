@@ -1,9 +1,9 @@
 module hsmyc/htmx
 
-go 1.21.0
+go 1.21
 
 require (
-	github.com/a-h/templ v0.2.476
+	github.com/a-h/templ v0.2.501
 	github.com/joho/godotenv v1.5.1
 	go.mongodb.org/mongo-driver v1.13.1
 )
