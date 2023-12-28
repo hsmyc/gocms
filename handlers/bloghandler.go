@@ -13,8 +13,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var blogCollection *mongo.Collection = db.GetCollection(db.DB, "blogs")
-var blog models.Blogmodel
+var (
+	blogCollection *mongo.Collection = db.GetCollection(db.DB, "blogs")
+	blog           models.Blogmodel
+)
 
 func BlogHandler(blogTitle string) templ.Component {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -26,5 +28,4 @@ func BlogHandler(blogTitle string) templ.Component {
 		return layout.Index(nil, nil, nil)
 	}
 	return layout.Index(nil, blogpage.Blogpage(blog), nil)
-
 }

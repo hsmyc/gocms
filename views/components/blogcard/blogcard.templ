@@ -8,7 +8,7 @@ templ Blogcard(blogs []models.Blogmodel) {
 			<div class="card">
 				<div class="card-title">{ blog.Title }</div>
 				<p class="card-text">{ blog.Tldr }</p>
-				<a href={ blog.Url } class="card-btn">Read More</a>
+				<a href={ blog.Slug } class="card-btn">Read More</a>
 			</div>
 		}
 	</div>

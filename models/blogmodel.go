@@ -15,15 +15,15 @@ type Blogmodel struct {
 	TldrHeader       string             `json:"tldrheader,omitempty" validate:"required"`
 	Tldr             string             `json:"tldr,omitempty" validate:"required"`
 	Content          string             `json:"content,omitempty" validate:"required"`
-	Url              templ.SafeURL      `json:"url,omitempty" validate:"required"`
+	Slug             templ.SafeURL      `json:"slug,omitempty" validate:"required"`
 	Tags             []string           `json:"tags,omitempty" validate:"required"`
 	Image            string             `json:"image,omitempty" validate:"required"`
 	Links            []string           `json:"links,omitempty" validate:"required"`
 	Subheadings      []string           `json:"subheadings,omitempty" validate:"required"`
 	SubheadingLinks  []string           `json:"subheadinglinks,omitempty" validate:"required"`
 	Topics           []string           `json:"topics,omitempty" validate:"required"`
-	LikeCount        string             `json:"likecount,omitempty" validate:"required"`
-	CommentCount     string             `json:"commentcount,omitempty" validate:"required"`
-	ShareCount       string             `json:"sharecount,omitempty" validate:"required"`
-	ReadingIndicator string             `json:"readingindicator,omitempty" validate:"required"`
+	LikeCount        string             `json:"likecount,omitempty"`
+	CommentCount     string             `json:"commentcount,omitempty"`
+	ShareCount       string             `json:"sharecount,omitempty"`
+	ReadingIndicator string             `json:"readingindicator,omitempty"`
 }

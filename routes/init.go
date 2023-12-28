@@ -5,4 +5,5 @@ func InitializeContext() {
 	Blog()
 	Index()
 	CreateBlog()
+	CreateBlogPage()
 }
