@@ -1,0 +1,59 @@
+package createblog
+
+templ CreateBlogpage() {
+	<div>
+		<form method="post" action="/blogcreate">
+			<div>
+				<h1>Title</h1>
+				<input type="text" name="title" value="Title is required"/>
+			</div>
+			<div>
+				<h1>Subtitle</h1>
+				<input type="text" name="subtitle" value="Subtitle is required"/>
+			</div>
+			<div>
+				<h1>Author</h1>
+				<input type="text" name="author" value="Author is required"/>
+			</div>
+			<div>
+				<h1>TLDRHeader</h1>
+				<input type="text" name="tldrheader" value="TLDRHeader is required"/>
+			</div>
+			<div>
+				<h1>TLDRContent</h1>
+				<textarea name="tldrcontent" value="TLDRContent is required"></textarea>
+			</div>
+			<div>
+				<h1>Content</h1>
+				<textarea name="content" value="Content is required"></textarea>
+			</div>
+			<div><h1>Slug</h1> <input type="text" name="slug" value="Slug is required"/> </div>
+			<div>
+				<h1>Category</h1>
+				<input type="text" name="category" value="Category is required"/>
+			</div>
+			<div>
+				<h1>Tags</h1>
+				<input type="text" name="tags" value="Tags are required"/>
+			</div>
+			<div>
+				<h1>Image</h1>
+				<input type="text" name="image" value="Image is required"/>
+			</div>
+			<div>
+				<h1>Links</h1>
+				<input type="text" name="links" value="Links are required"/>
+			</div>
+			<div>
+				<h1>Subheadings</h1>
+				<input type="text" name="subheadings" value="Subheadings are required"/>
+			</div>
+			<div>
+				<h1>SubheadingLinks</h1>
+				<input type="text" name="subheadingcontent" value="SubheadingConte is required"/>
+			</div>
+			<div><h1>Topics></h1> <input type="text" name="topics" value="Topics are required"/> </div>
+			<input type="submit" value="Submit"/>
+		</form>
+	</div>
+}
