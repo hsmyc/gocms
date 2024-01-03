@@ -1,6 +1,6 @@
 # CMS
 
-This is a simple CMS built with Go, TS, HTMX, MongoDB, and TypeScript.
+This is a simple CMS built with Go, HTMX, MongoDB, and TypeScript.
 
 ## Features
 
