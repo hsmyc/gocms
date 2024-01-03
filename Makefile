@@ -13,4 +13,3 @@ watch-app:
 stop:
 	@pkill -f 'go run cmd/main.go'
 	@pkill -f 'entr'
-	@pkill -f 'browser-sync'
