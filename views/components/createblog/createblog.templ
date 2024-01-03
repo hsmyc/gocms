@@ -1,7 +1,7 @@
 package createblog
 
 templ CreateBlogpage() {
-	<form id="blogform" class="blogform" hx-post="/createblog">
+	<form id="blogform" class="blogform" hx-post="/createblog" onsubmit="updateContent()">
 		<div>
 			<label>Title</label>
 			<input type="text" name="title" value="Title is required"/>
@@ -24,7 +24,8 @@ templ CreateBlogpage() {
 		</div>
 		<div>
 			<label>Content</label>
-			<textarea name="content" value="Content is required"></textarea>
+			<input type="hidden" name="content" id="hiddenContent"/>
+			<div name="content" value="Content is required" contenteditable="true"></div>
 		</div>
 		<div><label>Slug</label> <input type="text" name="slug" value="Slug is required"/> </div>
 		<div>
