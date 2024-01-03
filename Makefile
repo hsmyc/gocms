@@ -9,7 +9,7 @@ generate-templates:
 		fi \
 	done
 watch-app:
-	@tsc ./static/script/script.ts --outDir ./static/script
+	@tsc
 	@find . -name '*.templ' | entr -r -s 'make generate-templates & go run cmd/main.go' &
 stop:
 	@pkill -f 'go run cmd/main.go'
