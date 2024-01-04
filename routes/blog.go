@@ -13,8 +13,8 @@ var blog models.Blogmodel
 
 func Blog() {
 	http.HandleFunc("/blog/", func(w http.ResponseWriter, r *http.Request) {
-		title := r.URL.Path[6:]
-		templ.Handler(handlers.BlogHandler(title)).ServeHTTP(w, r)
+		slug := r.URL.Path[1:]
+		templ.Handler(handlers.BlogHandler(slug)).ServeHTTP(w, r)
 	})
 }
 
@@ -39,7 +39,10 @@ func CreateBlog() {
 			blog.TldrHeader = r.FormValue("tldrheader")
 			blog.Tldr = r.FormValue("tldr")
 			blog.Content = r.FormValue("content")
-			blog.Slug = templ.SafeURL(r.FormValue("slug"))
+
+			slug := "blog/" + templ.SafeURL(strings.ToLower(strings.ReplaceAll(r.FormValue("title"), " ", "-")))
+			blog.Slug = templ.SafeURL(slug)
+
 			blog.Image = r.FormValue("image")
 
 			blog.Tags = strings.Split(r.FormValue("tags"), ",")

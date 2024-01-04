@@ -18,11 +18,11 @@ var (
 	blog           models.Blogmodel
 )
 
-func BlogHandler(blogTitle string) templ.Component {
+func BlogHandler(blogSlug string) templ.Component {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	filter := bson.M{"title": blogTitle}
+	filter := bson.M{"slug": blogSlug}
 	err := blogCollection.FindOne(ctx, filter).Decode(&blog)
 	if err != nil {
 		return layout.Index(nil, nil, nil)
