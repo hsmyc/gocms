@@ -215,9 +215,6 @@ a {
   font-weight: 600;
   text-align: left;
 }
-.blog_comment_form {
-  /* TODO: create style for form */
-}
 
 .blog_comment_writer_field {
   display: flex;
@@ -240,8 +237,39 @@ a {
   flex-direction: column;
 }
 
-.blogform{
+.blogform {
   display: flex;
   flex-direction: column;
   gap: var(--m);
+}
+
+.editor_button_layout {
+  display: flex;
+  gap: var(--m);
+  justify-content: flex-start;
+}
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--m);
+  padding: var(--m);
+  margin-top: var(--m);
+  border: 1px solid var(--secondary);
+}
+
+.editor_body {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  min-height: 500px;
+}
+
+.editor_button {
+  padding: var(--s);
+  background-color: var(--fourth);
+  color: var(--third);
+  border: none;
+  border-radius: var(--xs);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
 }

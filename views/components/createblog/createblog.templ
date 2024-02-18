@@ -1,57 +1,9 @@
 package createblog
 
+import "hsmyc/htmx/views/components/richtexteditor"
+
 templ CreateBlogpage() {
-	<form id="blogform" class="blogform" hx-post="/createblog" onsubmit="updateContent()">
-		<div>
-			<label>Title</label>
-			<input type="text" name="title" value="Title is required"/>
-		</div>
-		<div>
-			<label>Subtitle</label>
-			<input type="text" name="subtitle" value="Subtitle is required"/>
-		</div>
-		<div>
-			<label>Author</label>
-			<input type="text" name="author" value="Author is required"/>
-		</div>
-		<div>
-			<label>TLDRHeader</label>
-			<input type="text" name="tldrheader" value="TLDRHeader is required"/>
-		</div>
-		<div>
-			<label>TLDRContent</label>
-			<textarea name="tldrcontent" value="TLDRContent is required"></textarea>
-		</div>
-		<div>
-			<label>Content</label>
-			<input type="hidden" name="content" id="hiddenContent"/>
-			<div name="content" value="Content is required" contenteditable="true"></div>
-		</div>
-		<div>
-			<label>Categories</label>
-			<input type="text" name="category" value="Category is required"/>
-		</div>
-		<div>
-			<label>Tags</label>
-			<input type="text" name="tags" value="Tags are required"/>
-		</div>
-		<div>
-			<label>Image</label>
-			<input type="text" name="image" value="Image is required"/>
-		</div>
-		<div>
-			<label>Links</label>
-			<input type="text" name="links" value="Links are required"/>
-		</div>
-		<div>
-			<label>Subheadings</label>
-			<input type="text" name="subheadings" value="Subheadings are required"/>
-		</div>
-		<div>
-			<label>SubheadingLinks</label>
-			<input type="text" name="subheadingcontent" value="SubheadingConte is required"/>
-		</div>
-		<div><label>Topics></label> <input type="text" name="topics" value="Topics are required"/> </div>
-		<button type="submit">Submit</button>
-	</form>
+	<div>
+		@richtexteditor.RichTextEditor()
+	</div>
 }

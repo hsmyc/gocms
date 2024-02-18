@@ -1,0 +1,47 @@
+package richtexteditor;
+
+script bold() {
+    document.execCommand('bold', false, null);
+}
+
+script italic() {
+    document.execCommand('italic', false, null);
+}
+
+script underline() {
+    document.execCommand('underline', false, null);
+}
+
+script strikethrough() {
+    document.execCommand('strikethrough', false, null);
+}
+
+script code() {
+    document.execCommand('insertHTML', false, '<code>' + window.getSelection().toString() + '</code>');
+}
+
+script header() {
+    document.execCommand('formatBlock', false, '<h1>');
+}
+
+script logger() {
+    const editor = document.getElementById('editor');
+    console.log(editor);
+}
+
+templ RichTextEditor() {
+	<div class="editor">
+		<div class="editor_button_layout">
+			<button onClick={ header() } class="editor_button">Header</button>
+			<button onClick={ bold() } class="editor_button">Bold</button>
+			<button onClick={ italic() } class="editor_button">Italic</button>
+			<button onClick={ underline() } class="editor_button">Underline</button>
+			<button onClick={ strikethrough() } class="editor_button">Strikethrough</button>
+			<button onClick={ code() } class="editor_button">Code</button>
+		</div>
+		<div id="editor" contentEditable="true" class="editor_body">
+			write something here
+		</div>
+		<button onClick={ logger() } class="editor_button">Log</button>
+	</div>
+}

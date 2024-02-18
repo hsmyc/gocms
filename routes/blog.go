@@ -4,6 +4,7 @@ import (
 	"hsmyc/htmx/handlers"
 	"hsmyc/htmx/models"
 	"net/http"
+
 	"strings"
 
 	"github.com/a-h/templ"
@@ -50,7 +51,6 @@ func CreateBlog() {
 			blog.Subheadings = strings.Split(r.FormValue("subheadings"), ",")
 			blog.SubheadingLinks = strings.Split(r.FormValue("subheadinglinks"), ",")
 			blog.Topics = strings.Split(r.FormValue("topics"), ",")
-
 			handlers.CreateBlogHandler(blog)
 			w.WriteHeader(http.StatusCreated)
 			w.Write([]byte("Blog created successfully"))
