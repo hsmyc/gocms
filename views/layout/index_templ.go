@@ -85,7 +85,7 @@ func Index(h templ.Component, c templ.Component, f templ.Component) templ.Compon
 				return templ_7745c5c3_Err
 			}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><script src=\"/static/scripts/compiled/script.js\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><script type=\"module\" src=\"/static/scripts/compiled/script.js\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

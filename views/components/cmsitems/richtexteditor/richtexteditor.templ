@@ -1,8 +1,8 @@
 package richtexteditor;
 
-script bold() {
-    document.execCommand('bold', false, null);
-}
+// script bold() {
+//     document.execCommand('bold', false, null);
+// }
 
 script italic() {
     document.execCommand('italic', false, null);
@@ -33,7 +33,7 @@ templ RichTextEditor() {
 	<div class="editor">
 		<div class="editor_button_layout">
 			<button onClick={ header() } class="editor_button">Header</button>
-			<button onClick={ bold() } class="editor_button">Bold</button>
+			<button id="bold" class="editor_button">Bold</button>
 			<button onClick={ italic() } class="editor_button">Italic</button>
 			<button onClick={ underline() } class="editor_button">Underline</button>
 			<button onClick={ strikethrough() } class="editor_button">Strikethrough</button>

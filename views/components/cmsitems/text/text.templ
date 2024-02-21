@@ -1,0 +1,9 @@
+package text;
+
+templ Text(isLong bool) {
+	if isLong {
+		<textarea rows="4" cols="50" class="text_long"></textarea>
+	} else {
+		<input type="text" class="text_short"/>
+	}
+}

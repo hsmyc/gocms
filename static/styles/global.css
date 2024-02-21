@@ -273,3 +273,38 @@ a {
   font-weight: 600;
   transition: all 0.3s ease-in-out;
 }
+
+.modal {
+  display: none;
+}
+
+.modal--active {
+  display: flex;
+  flex-direction: column;
+  gap: var(--m);
+  padding: var(--m);
+  background-color: var(--fourth);
+  box-shadow: var(--box-shadow);
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal_body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--m);
+}
+
+.modal__close {
+  align-self: flex-end;
+  padding: var(--s);
+  background-color: var(--fourth);
+  color: var(--third);
+  border: none;
+  border-radius: var(--xs);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}

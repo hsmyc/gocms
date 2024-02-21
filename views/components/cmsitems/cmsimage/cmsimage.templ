@@ -1,0 +1,14 @@
+package cmsimage;
+
+//TODO: add a way to upload images and store them in the database
+//TODO: add a way to select images from the database
+//TODO: add a way to select images from the file system
+//TODO: show the images in the admin panel
+//TODO: show the image after upload
+
+templ CmsImage(image string, alt string) {
+	<label for="image">Image</label>
+	<input type="text" name="image" value={ image } class="cmsimage_input"/>
+	<label for="alt">Alt</label>
+	<input type="text" name="alt" value={ alt } class="cmsimage_input"/>
+}
