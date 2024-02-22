@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"hsmyc/htmx/handlers"
+	"hsmyc/gocms/handlers"
 	"net/http"
 )
 

@@ -10,8 +10,8 @@ import "context"
 import "io"
 import "bytes"
 
-import "hsmyc/htmx/views/components/navbar"
-import "hsmyc/htmx/models"
+import "hsmyc/gocms/views/components/navbar"
+import "hsmyc/gocms/models"
 
 var navbarMenu []models.NavbarItem
 

@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"hsmyc/htmx/views/components/createblog"
-	"hsmyc/htmx/views/layout"
+	"hsmyc/gocms/views/components/createblog"
+	"hsmyc/gocms/views/layout"
 
 	"github.com/a-h/templ"
 )

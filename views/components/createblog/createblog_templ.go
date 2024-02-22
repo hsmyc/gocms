@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "hsmyc/htmx/views/components/cmsitems/richtexteditor"
+import "hsmyc/gocms/views/components/cmsitems/richtexteditor"
 
 func CreateBlogpage() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {

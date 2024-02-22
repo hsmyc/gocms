@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"hsmyc/htmx/handlers"
-	"hsmyc/htmx/models"
+	"hsmyc/gocms/handlers"
+	"hsmyc/gocms/models"
 	"net/http"
 
 	"strings"

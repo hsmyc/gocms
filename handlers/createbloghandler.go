@@ -3,7 +3,7 @@ package handlers
 import (
 	"context"
 
-	"hsmyc/htmx/models"
+	"hsmyc/gocms/models"
 	"time"
 )
 

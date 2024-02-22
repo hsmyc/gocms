@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"hsmyc/htmx/routes"
+	"hsmyc/gocms/routes"
 	"net/http"
 )
 

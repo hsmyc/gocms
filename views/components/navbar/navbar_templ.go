@@ -10,7 +10,7 @@ import "context"
 import "io"
 import "bytes"
 
-import "hsmyc/htmx/models"
+import "hsmyc/gocms/models"
 
 func Navbar(menu []models.NavbarItem) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {

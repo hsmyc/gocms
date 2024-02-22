@@ -2,10 +2,10 @@ package handlers
 
 import (
 	"context"
-	"hsmyc/htmx/db"
-	"hsmyc/htmx/models"
-	"hsmyc/htmx/views/components/blogpage"
-	"hsmyc/htmx/views/layout"
+	"hsmyc/gocms/db"
+	"hsmyc/gocms/models"
+	"hsmyc/gocms/views/components/blogpage"
+	"hsmyc/gocms/views/layout"
 	"time"
 
 	"github.com/a-h/templ"

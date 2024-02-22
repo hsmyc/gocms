@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"context"
-	"hsmyc/htmx/models"
-	"hsmyc/htmx/views/components/blogcard"
-	"hsmyc/htmx/views/layout"
+	"hsmyc/gocms/models"
+	"hsmyc/gocms/views/components/blogcard"
+	"hsmyc/gocms/views/layout"
 	"time"
 
 	"github.com/a-h/templ"
