@@ -1,13 +1,19 @@
-export default function Modal() {
-  const modal = document.querySelector(".modal");
-  const modalClose = document.querySelector(".modal__close");
-  const modalOpen = document.querySelector(".modal__open");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal__close");
+const modalOpen = document.querySelector(".modal__open");
 
-  modalOpen.addEventListener("click", () => {
-    modal.classList.add("modal--active");
-  });
+export function modalOpenFunction() {
+  modal.classList.add("modal--active");
+}
 
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("modal--active");
-  });
+export function modalCloseFunction() {
+  modal.classList.remove("modal--active");
+}
+
+export function modalOpenEvent() {
+  modalOpen.addEventListener("click", modalOpenFunction);
+}
+
+export function modalCloseEvent() {
+  modalClose.addEventListener("click", modalCloseFunction);
 }

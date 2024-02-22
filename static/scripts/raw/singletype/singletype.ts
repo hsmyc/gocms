@@ -1,21 +1,20 @@
 import useState from "../hooks/setState.js";
-
+import { modalCloseFunction } from "../functions/modal.js";
 export default function SingleTypeField() {
   const [selectedFields, setSelectedFields, subscribe] = useState([]);
   const button = document.getElementById("single_type_save_button");
+  const closeButton = document.querySelector(".modal__close");
+
   function Fields() {
-    return `
-        <div
-        <p>Selected Fields</p>
+    return `<p>Selected Fields</p>
         ${selectedFields().map((field) => {
-          return `<p>${field.name}</p>`;
-        })}
-        </div>
-        `;
+          return `<div>${field.name}</div>`;
+        })}`;
   }
   function updateFields() {
     document.getElementById("single_type_fields").innerHTML = Fields();
   }
+
   subscribe(updateFields);
 
   document.querySelectorAll(".single_type_field").forEach((field) => {
@@ -31,12 +30,25 @@ export default function SingleTypeField() {
     });
   });
 
+  closeButton.addEventListener("click", () => {
+    document
+      .querySelectorAll(".single_type_field")
+      .forEach((field: HTMLInputElement) => {
+        field.checked = false;
+      });
+    setSelectedFields([]);
+  });
+
   button.addEventListener("click", () => {
+    document
+      .querySelectorAll(".single_type_field")
+      .forEach((field: HTMLInputElement) => {
+        field.checked = false;
+      });
     const data = {
       fields: selectedFields(),
     };
     console.log(data);
+    modalCloseFunction();
   });
-
-  updateFields();
 }

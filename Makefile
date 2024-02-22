@@ -9,10 +9,9 @@ generate-templates:
 		fi \
 	done
 watch-app:
-	@tsc
 	@find . -name '*.templ' | entr -r -s 'make generate-templates & go run cmd/main.go' &
 	@find . -name '*.go' | entr -r -s 'go run cmd/main.go' &
-	@find . -name '*.ts' | entr -r -s 'tsc & go run cmd/main.go' &
+
 stop:
 	@pkill -f 'go run cmd/main.go'
 	@pkill -f 'entr'

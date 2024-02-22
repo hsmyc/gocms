@@ -17,11 +17,13 @@ This is a simple CMS built with Go, HTMX, MongoDB, and TypeScript.
 - **MongoDB**: This application uses MongoDB as its database. MongoDB is a source-available cross-platform document-oriented database program. It uses JSON-like documents with optional schemas.
 - **Makefile**: This application uses a Makefile for automating build tasks, including the compilation of TypeScript files.
 - **entr**: entr is a utility for running arbitrary commands when files change. It's used in this application to automatically regenerate templates, compile TypeScript, and restart the application when files change.
+- **Esbuild**: Esbuild is a JavaScript bundler and minifier. It's used in this application to compile TypeScript files.
 
 ## Prerequisites
 
 - Go
 - MongoDB
+- Esbuild
 - Make
 - entr
 - Node.js and TypeScript (for compiling TypeScript files)

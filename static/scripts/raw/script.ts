@@ -1,9 +1,10 @@
-import bold from "./functions/bold.js";
-import Modal from "./functions/modal.js";
+import Bold from "./functions/bold.js";
+import { modalCloseEvent, modalOpenEvent } from "./functions/modal.js";
 import SingleTypeField from "./singletype/singletype.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  bold();
-  Modal();
+  Bold();
+  modalCloseEvent();
+  modalOpenEvent();
   SingleTypeField();
 });
