@@ -4,9 +4,12 @@ import (
 	"context"
 	"hsmyc/gocms/db"
 	"hsmyc/gocms/models"
+	"hsmyc/gocms/views/components/contentschema/singletype"
+	"hsmyc/gocms/views/layout"
 	"log"
 	"time"
 
+	"github.com/a-h/templ"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -24,4 +27,8 @@ func InsertSingleType(singleType models.SingleTypeModel) error {
 
 	log.Printf("SingleType inserted successfully with id: %v\n", result.InsertedID)
 	return nil
+}
+
+func SingleTypeCreatePageHandler() templ.Component {
+	return layout.Index(nil, singletype.CreateSingleType(), nil)
 }

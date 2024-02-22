@@ -4,7 +4,6 @@ import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type Field struct {
 	Name string `json:"name"`
-	Type string `json:"type"`
 }
 
 type SingleTypeModel struct {

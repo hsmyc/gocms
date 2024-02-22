@@ -1,41 +1,37 @@
-function singleTypeField() {
-    const [selectedFields, setSelectedFields] = useState([]);
+import useState from "../hooks/setState.js";
+export default function SingleTypeField() {
+    const [selectedFields, setSelectedFields, subscribe] = useState([]);
     const button = document.getElementById("single_type_save_button");
     function Fields() {
         return `
         <div
-        ${selectedFields.map((field) => {
-            return `<p>${field}</p>`;
+        <p>Selected Fields</p>
+        ${selectedFields().map((field) => {
+            return `<p>${field.name}</p>`;
         })}
-        }
         </div>
         `;
     }
-    document.getElementById("single_type_fields").innerHTML = Fields();
-    document.querySelectorAll(".field").forEach((field) => {
+    function updateFields() {
+        document.getElementById("single_type_fields").innerHTML = Fields();
+    }
+    subscribe(updateFields);
+    document.querySelectorAll(".single_type_field").forEach((field) => {
         field.addEventListener("click", (e) => {
             const target = e.target;
             if (target.checked) {
-                setSelectedFields([
-                    ...selectedFields,
-                    { name: target.value, type: target.type },
-                ]);
+                setSelectedFields([...selectedFields(), { name: target.value }]);
             }
             else {
-                setSelectedFields(selectedFields.filter((field) => field.name !== target.value));
+                setSelectedFields(selectedFields().filter((field) => field.name !== target.value));
             }
         });
     });
     button.addEventListener("click", () => {
         const data = {
-            fields: selectedFields,
+            fields: selectedFields(),
         };
-        fetch("/api/singletype/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        });
+        console.log(data);
     });
+    updateFields();
 }

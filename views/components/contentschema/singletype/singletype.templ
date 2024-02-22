@@ -3,8 +3,8 @@ package singletype
 templ CreateSingleType() {
 	<div class="single_type_container">
 		<h1>Create single type</h1>
+		<div id="single_type_fields" class="single_type_fields"></div>
 		<button class="modal__open">Add new field</button>
-		<div class="single_type_fields"></div>
 		<div style="diplay:none" class="modal">
 			<div class="modal_body">
 				<button class="modal__close">X</button>
@@ -14,7 +14,7 @@ templ CreateSingleType() {
 				<input type="checkbox" id="boolean" name="boolean" class="single_type_field" value="bool"/>
 				<label for="richtext">Rich text</label>
 				<input type="checkbox" id="richtext" name="richtext" class="single_type_field" value="richtext"/>
-				<button class="single_type_save_button">Save</button>
+				<button id="single_type_save_button" class="single_type_save_button">Save</button>
 			</div>
 		</div>
 	</div>

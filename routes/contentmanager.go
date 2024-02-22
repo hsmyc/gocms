@@ -5,11 +5,13 @@ import (
 	"hsmyc/gocms/handlers"
 	"hsmyc/gocms/models"
 	"net/http"
+
+	"github.com/a-h/templ"
 )
 
 var singleType models.SingleTypeModel
 
-func SingleType() {
+func SingleTypePost() {
 	http.HandleFunc("/api/singletype/", func(w http.ResponseWriter, r *http.Request) {
 		defer r.Body.Close()
 		if r.Method != http.MethodPost {
@@ -24,5 +26,11 @@ func SingleType() {
 		handlers.InsertSingleType(singleType)
 		w.WriteHeader(http.StatusCreated)
 		w.Write([]byte("SingleType created successfully"))
+	})
+}
+
+func SingleTypeCreatePage() {
+	http.HandleFunc("/cms/singletype", func(w http.ResponseWriter, r *http.Request) {
+		templ.Handler(handlers.SingleTypeCreatePageHandler()).ServeHTTP(w, r)
 	})
 }

@@ -1,4 +1,4 @@
-export default function bold() {
+export default function Bold() {
     const boldButton = document.getElementById("bold");
     boldButton &&
         boldButton.addEventListener("click", () => {

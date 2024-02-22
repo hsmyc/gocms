@@ -32,7 +32,7 @@ func CreateSingleType() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><button class=\"modal__open\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1><div id=\"single_type_fields\" class=\"single_type_fields\"></div><button class=\"modal__open\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -41,7 +41,7 @@ func CreateSingleType() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button><div class=\"single_type_fields\"></div><div style=\"diplay:none\" class=\"modal\"><div class=\"modal_body\"><button class=\"modal__close\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</button><div style=\"diplay:none\" class=\"modal\"><div class=\"modal_body\"><button class=\"modal__close\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -77,7 +77,7 @@ func CreateSingleType() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</label> <input type=\"checkbox\" id=\"richtext\" name=\"richtext\" class=\"single_type_field\" value=\"richtext\"> <button class=\"single_type_save_button\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</label> <input type=\"checkbox\" id=\"richtext\" name=\"richtext\" class=\"single_type_field\" value=\"richtext\"> <button id=\"single_type_save_button\" class=\"single_type_save_button\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

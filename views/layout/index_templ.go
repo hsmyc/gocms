@@ -18,6 +18,7 @@ var navbarMenu []models.NavbarItem
 func init() {
 	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Create Blog", Url: "/createblog"})
 	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "About", Url: "/about"})
+	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Single Type", Url: "/cms/singletype"})
 }
 
 func Index(h templ.Component, c templ.Component, f templ.Component) templ.Component {

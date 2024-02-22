@@ -1,4 +1,4 @@
-module hsmyc/htmx
+module hsmyc/gocms
 
 go 1.21
 
