@@ -32,11 +32,14 @@ This is a simple CMS built with Go, HTMX, MongoDB, and TypeScript.
 
 1. Clone this repository.
 2. Navigate to the project directory.
-3. Run `make` to build and run the application.
-
-## Usage
-
-To create a new blog post, navigate to `/createblog` in your web browser and fill out the form.
+3. Create .env file with the for the following environment variables:
+   - `MONGO_URI`: The URI for your MongoDB database.
+4. Run 'go mod tidy' to install the required Go packages.
+5. Make sure GOPATH and GOROOT are set properly.
+   - `GOROOT` is the location where Go is installed.
+   - `GOPATH` is the location where Go projects are stored.
+6. Make sure MongoDB is running.``
+7. Run `make` to build and run the application.
 
 ## License
 
