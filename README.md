@@ -36,9 +36,15 @@ This is a simple CMS built with Go, HTMX, MongoDB, and TypeScript.
    - `MONGO_URI`: The URI for your MongoDB database.
 4. Run 'go mod tidy' to install the required Go packages.
 5. Make sure GOPATH and GOROOT are set properly.
+
    - `GOROOT` is the location where Go is installed.
    - `GOPATH` is the location where Go projects are stored.
-6. Make sure MongoDB is running.``
+
+   ```bash
+     export GOPATH=/Users/yourusername/go export PATH=$PATH:$GOPAT export PATH=$PATH:$GOPATH/bin
+   ```
+
+6. Make sure MongoDB is running.
 7. Run `make` to build and run the application.
 
 ## License
