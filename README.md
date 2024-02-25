@@ -41,7 +41,9 @@ This is a simple CMS built with Go, HTMX, MongoDB, and TypeScript.
    - `GOPATH` is the location where Go projects are stored.
 
    ```bash
-     export GOPATH=/Users/yourusername/go export PATH=$PATH:$GOPAT export PATH=$PATH:$GOPATH/bin
+     export GOPATH=/Users/yourusername/go export
+     PATH=$PATH:$GOPATH export
+     PATH=$PATH:$GOPATH/bin
    ```
 
 6. Make sure MongoDB is running.
