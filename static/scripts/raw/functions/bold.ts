@@ -1,7 +1,9 @@
+import { $ } from "../utils/aliases";
+
 export default function Bold() {
-  const boldButton = document.getElementById("bold");
+  const boldButton = $("#bold");
   boldButton &&
-    boldButton.addEventListener("click", () => {
+    on(boldButton, "click", () => {
       document.execCommand("bold", false, null);
     });
 

@@ -1,9 +1,10 @@
 import useState from "../hooks/setState.js";
 import { modalCloseFunction } from "../functions/modal.js";
+import { $, $$, on } from "../utils/aliases.js";
 export default function SingleTypeField() {
   const [selectedFields, setSelectedFields, subscribe] = useState([]);
-  const button = document.getElementById("single_type_save_button");
-  const closeButton = document.querySelector(".modal__close");
+  const button = $("#single_type_save_button");
+  const closeButton = $(".modal__close");
 
   function Fields() {
     return `<p>Selected Fields</p>
@@ -12,13 +13,13 @@ export default function SingleTypeField() {
         })}`;
   }
   function updateFields() {
-    document.getElementById("single_type_fields").innerHTML = Fields();
+    $("#single_type_fields").innerHTML = Fields();
   }
 
   subscribe(updateFields);
 
-  document.querySelectorAll(".single_type_field").forEach((field) => {
-    field.addEventListener("click", (e) => {
+  $$(".single_type_field").forEach((field) => {
+    on(field, "click", (e) => {
       const target = e.target as HTMLInputElement;
       if (target.checked) {
         setSelectedFields([...selectedFields(), { name: target.value }]);
@@ -30,21 +31,17 @@ export default function SingleTypeField() {
     });
   });
 
-  closeButton.addEventListener("click", () => {
-    document
-      .querySelectorAll(".single_type_field")
-      .forEach((field: HTMLInputElement) => {
-        field.checked = false;
-      });
+  on(closeButton, "click", () => {
+    $$(".single_type_field").forEach((field: HTMLInputElement) => {
+      field.checked = false;
+    });
     setSelectedFields([]);
   });
 
-  button.addEventListener("click", () => {
-    document
-      .querySelectorAll(".single_type_field")
-      .forEach((field: HTMLInputElement) => {
-        field.checked = false;
-      });
+  on(button, "click", () => {
+    $$(".single_type_field").forEach((field: HTMLInputElement) => {
+      field.checked = false;
+    });
     const data = {
       fields: selectedFields(),
     };

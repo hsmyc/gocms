@@ -1,6 +1,8 @@
-const modal = document.querySelector(".modal");
-const modalClose = document.querySelector(".modal__close");
-const modalOpen = document.querySelector(".modal__open");
+import { $, on } from "../utils/aliases";
+
+const modal = $(".modal");
+const modalClose = $(".modal__close");
+const modalOpen = $(".modal__open");
 
 export function modalOpenFunction() {
   modal.classList.add("modal--active");
@@ -11,9 +13,9 @@ export function modalCloseFunction() {
 }
 
 export function modalOpenEvent() {
-  modalOpen.addEventListener("click", modalOpenFunction);
+  on(modalOpen, "click", modalOpenFunction);
 }
 
 export function modalCloseEvent() {
-  modalClose.addEventListener("click", modalCloseFunction);
+  on(modalClose, "click", modalCloseFunction);
 }
