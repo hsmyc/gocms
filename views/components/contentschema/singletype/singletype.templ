@@ -2,8 +2,12 @@ package singletype
 
 import "hsmyc/gocms/views/components/uicomponents/modal"
 
+script Init() {
+	app.modalOpen(), app.modalClose(), app.singleTypeField()
+}
+
 templ CreateSingleType() {
-	<div class="single_type_container">
+	<div class="single_type_container" onload={ Init() }>
 		<h1>Create single type</h1>
 		<div id="single_type_fields" class="single_type_fields"></div>
 		@modal.Modal("Add new field") {

@@ -10,9 +10,6 @@ import "context"
 import "io"
 import "bytes"
 
-//	script bold() {
-//	    document.execCommand('bold', false, null);
-//	}
 func italic() templ.ComponentScript {
 	return templ.ComponentScript{
 		Name: `__templ_italic_10be`,
@@ -65,12 +62,12 @@ func header() templ.ComponentScript {
 
 func logger() templ.ComponentScript {
 	return templ.ComponentScript{
-		Name: `__templ_logger_70c2`,
-		Function: `function __templ_logger_70c2(){const editor = document.getElementById('editor');
-    console.log(editor);
+		Name: `__templ_logger_4cb3`,
+		Function: `function __templ_logger_4cb3(){const editor = document.getElementById('editor');
+   
 }`,
-		Call:       templ.SafeScript(`__templ_logger_70c2`),
-		CallInline: templ.SafeScriptInline(`__templ_logger_70c2`),
+		Call:       templ.SafeScript(`__templ_logger_4cb3`),
+		CallInline: templ.SafeScriptInline(`__templ_logger_4cb3`),
 	}
 }
 

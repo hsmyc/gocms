@@ -1,7 +1,7 @@
 export const $ = (selector: string) => document.querySelector(selector);
 export const $$ = (selector: string) => document.querySelectorAll(selector);
 export const on = (
-  element: string | Element,
+  element: string | Element | HTMLElement | HTMLInputElement | null,
   event: string,
   callback: EventListenerOrEventListenerObject
 ): void => {

@@ -4,7 +4,7 @@ import SingleTypeField from "./singletype/singletype.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   Bold();
-  modalCloseEvent();
   modalOpenEvent();
+  modalCloseEvent();
   SingleTypeField();
 });

@@ -1,11 +1,9 @@
-import { $ } from "../utils/aliases";
+import { $, on } from "../utils/aliases";
 
 export default function Bold() {
   const boldButton = $("#bold");
   boldButton &&
     on(boldButton, "click", () => {
-      document.execCommand("bold", false, null);
+      document.execCommand("bold", false, undefined);
     });
-
-  console.log("bold function");
 }
