@@ -1,17 +1,24 @@
-import useState from "../hooks/useState.js";
 import { modalCloseFunction } from "../functions/modal.js";
 import { $, $$, on } from "../utils/aliases.js";
+import statemanager, { ComponentStateManager } from "atsmanager";
+
 type Field = {
   name: string;
 }[];
 export default function SingleTypeField() {
-  const [selectedFields, setSelectedFields, subscribe] = useState<Field>([]);
+  const manager = new statemanager();
+  manager.addComponentState([]);
+  const state: ComponentStateManager<Field> =
+    manager.getStateManager("component");
+  const subscribe = state.subscribe;
+  const sfields = state.getState();
+
   const button = $("#single_type_save_button");
   const closeButton = $(".modal__close");
 
   function Fields() {
     return `<p>Selected Fields</p>
-        ${selectedFields().map((field) => {
+        ${sfields()?.map((field) => {
           return `<div>${field.name}</div>`;
         })}`;
   }
@@ -26,11 +33,12 @@ export default function SingleTypeField() {
   $$(".single_type_field").forEach((field) => {
     on(field, "click", (e) => {
       const target = e.target as HTMLInputElement;
+      console.log(sfields("back"));
       if (target.checked) {
-        setSelectedFields([...selectedFields(), { name: target.value }]);
+        state.setState([...(sfields() || []), { name: target.value }]);
       } else {
-        setSelectedFields(
-          selectedFields().filter((field) => field.name !== target.value)
+        state.setState(
+          (sfields() || []).filter((field) => field.name !== target.value)
         );
       }
     });
@@ -40,7 +48,7 @@ export default function SingleTypeField() {
     $$(".single_type_field").forEach((field) => {
       (field as HTMLInputElement).checked = false;
     });
-    setSelectedFields([]);
+    state.setState([]);
   });
 
   on(button, "click", () => {
@@ -48,7 +56,7 @@ export default function SingleTypeField() {
       (field as HTMLInputElement).checked = false;
     });
     const data = {
-      fields: selectedFields(),
+      fields: sfields()?.map((field) => field.name) || [],
     };
 
     modalCloseFunction();

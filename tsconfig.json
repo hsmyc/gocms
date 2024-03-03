@@ -8,7 +8,8 @@
     "allowJs": true,
     "checkJs": true,
     "strict": true,
-    "noEmit": true
+    "noEmit": true,
+    "moduleResolution": "node"
   },
   "include": ["static/scripts/raw/**/*.ts"],
   "exclude": ["./static/scripts/compiled"]
