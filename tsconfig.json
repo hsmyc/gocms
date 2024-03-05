@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./static/scripts/compiled",
-    "rootDir": "./static/scripts/raw",
+    "outDir": "./static/dist",
+    "rootDir": "./static/scripts/",
     "noImplicitAny": true,
     "module": "ES2022",
     "target": "es6",
@@ -11,6 +11,10 @@
     "noEmit": true,
     "moduleResolution": "node"
   },
-  "include": ["static/scripts/raw/**/*.ts"],
+  "include": [
+    "static/scripts/raw/**/*.ts",
+    "static/scripts/global.d.ts",
+    "static/scripts/script.ts"
+  ],
   "exclude": ["./static/scripts/compiled"]
 }

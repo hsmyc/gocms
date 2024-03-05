@@ -5,7 +5,12 @@ import "hsmyc/gocms/views/components/uicomponents/modal"
 templ CreateSingleType() {
 	<div class="single_type_container" id="single_type_container">
 		<h1>Create single type</h1>
-		<div id="single_type_fields" class="single_type_fields"></div>
+		<div>
+			<p>Selected fields:</p>
+			<div id="single_type_fields" class="single_type_fields">
+				<p>No fields selected</p>
+			</div>
+		</div>
 		@modal.Modal("Add new field") {
 			<div class="modal_body">
 				<button class="modal__close">X</button>

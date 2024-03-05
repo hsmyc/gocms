@@ -18,10 +18,24 @@ export default function SingleTypeField() {
 
   function Fields() {
     return `<p>Selected Fields</p>
-        ${sfields()?.map((field) => {
-          return `<div>${field.name}</div>`;
-        })}`;
+      ${sfields()
+        ?.map((field) => {
+          switch (field.name) {
+            case "text":
+              return `<div class='single_type_field'>
+              <label>${field.name}</label>
+              </div>`;
+            case "bool":
+              return `<div><label>${field.name}<input type="checkbox"/></label></div>`;
+            case "richtext":
+              return `<div contenteditable="true" style="border: 1px solid #ccc; min-height: 100px;">${field.name}</div>`;
+            default:
+              return `<div>Unsupported type</div>`;
+          }
+        })
+        .join("")}`;
   }
+
   function updateFields() {
     const singleTypeFields = $("#single_type_fields");
     if (!singleTypeFields) {
@@ -33,7 +47,6 @@ export default function SingleTypeField() {
   $$(".single_type_field").forEach((field) => {
     on(field, "click", (e) => {
       const target = e.target as HTMLInputElement;
-      console.log(sfields("back"));
       if (target.checked) {
         state.setState([...(sfields() || []), { name: target.value }]);
       } else {
