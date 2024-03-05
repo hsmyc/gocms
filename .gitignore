@@ -2,4 +2,4 @@
 go.sum
 node_modules
 dist
-views/*_templ.go
+*_templ.go
