@@ -1,14 +1,10 @@
 package layout
 
 import "hsmyc/gocms/views/components/navbar"
+import "hsmyc/gocms/views/components/uicomponents/navigationmenu"
 import "hsmyc/gocms/models"
 
 var navbarMenu []models.NavbarItem
-
-func init() {
-	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Create Blog", Url: "/createblog"})
-	navbarMenu = append(navbarMenu, models.NavbarItem{Title: "Single Type", Url: "/cms/singletype"})
-}
 
 templ Index(h templ.Component, c templ.Component, f templ.Component) {
 	<!DOCTYPE html>
@@ -17,11 +13,12 @@ templ Index(h templ.Component, c templ.Component, f templ.Component) {
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			// <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+			<script src="https://kit.fontawesome.com/6728a2149a.js" crossorigin="anonymous"></script>
 			<link rel="stylesheet" href="/static/dist/styles/global.css"/>
 			<link rel="preconnect" href="https://fonts.googleapis.com"/>
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 			<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet"/>
-			<title>yuce.dev</title>
+			<title>GO CMS</title>
 		</head>
 		<body>
 			<div class="container">
@@ -32,6 +29,7 @@ templ Index(h templ.Component, c templ.Component, f templ.Component) {
 					}
 				</div>
 				<div class="content">
+					@navigationmenu.NavigationMenu()
 					if c != nil {
 						@c
 					}
