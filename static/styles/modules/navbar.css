@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: var(--m);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--s);
+  font-size: var(--xxl);
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: var(--m);
+  }
+  .logo {
+    font-size: var(--l);
+  }
+}

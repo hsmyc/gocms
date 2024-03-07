@@ -1,0 +1,40 @@
+package singletype
+
+import "hsmyc/gocms/views/components/uicomponents/modal"
+
+templ CreateSingleType() {
+	<div class="st-container" id="single_type_container">
+		<h1>Create Single Type</h1>
+		<div class="st-name">
+			<label for="single_type_name">Name</label>
+			<input type="text" id="single_type_name" name="single_type_name"/>
+		</div>
+		<div>
+			<p>Selected fields:</p>
+			<div id="single_type_fields" class="st-fields">
+				<p>No fields selected</p>
+			</div>
+		</div>
+		<div class="st-modal-container">
+			@modal.Modal("Add") {
+				<div class="modal-body">
+					<button class="modal__close">X</button>
+					<div class="st-item">
+						<label for="text">Text</label>
+						<input type="checkbox" id="text" name="text" data-type="string" class="single_type_field" value="Text"/>
+					</div>
+					<div class="st-item">
+						<label for="boolean">Boolean</label>
+						<input type="checkbox" id="boolean" name="boolean" data-type="boolean" class="single_type_field" value="Boolean"/>
+					</div>
+					<div class="st-item">
+						<label for="richtext">Rich text</label>
+						<input type="checkbox" id="richtext" name="richtext" data-type="string" class="single_type_field" value="RichText"/>
+					</div>
+					<button id="single_type_item_save_button" class="single_type_save_button">Save</button>
+				</div>
+			}
+		</div>
+		<button id="single_type_save_button" class="st-save">Save</button>
+	</div>
+}

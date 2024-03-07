@@ -1,4 +1,10 @@
 @import url("./modules/navigationmenu.css");
+@import url("./modules/navbar.css");
+@import url("./modules/modal.css");
+@import url("./modules/singletype.css");
+@import url("./modules/createschema.css");
+
+/* GENERAL STYLES */
 :root {
   --primary: #132043;
   --secondary: #bad7e9;
@@ -38,9 +44,16 @@ body {
   color: var(--third);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
   margin: 0;
 }
+
 ul {
   padding-inline-start: 0;
   margin-block-start: 0;
@@ -54,82 +67,22 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* MAIN STYLES */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .header {
   width: 100%;
 }
-
-.navbar {
+.content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar_items {
-  display: flex;
-  gap: var(--s);
-}
-.navbar_item {
-  padding: var(--s);
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar_item:hover {
-  background-color: var(--fourth);
-  color: var(--third);
-  cursor: pointer;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  padding: var(--m);
-}
-
-.modal {
-  display: none;
-}
-
-.modal--active {
-  display: flex;
-  flex-direction: column;
-  gap: var(--m);
-  padding: var(--m);
-  background-color: var(--fourth);
-  box-shadow: var(--box-shadow);
-  width: fit-content;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.modal_body {
-  display: flex;
-  flex-direction: column;
   gap: var(--m);
 }
 
-.modal__close {
-  align-self: flex-end;
-  padding: var(--s);
-  background-color: var(--fourth);
-  color: var(--third);
-  border: none;
-  border-radius: var(--xs);
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-}
-.single_type_container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--m);
-  padding: var(--m);
-  border: 1px solid var(--secondary);
-}
-.single_type_fields {
-  display: flex;
-  flex-direction: column;
-  gap: var(--m);
-  border: 1px solid var(--secondary);
-  padding: var(--m);
+.content > * {
+  flex: 1;
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: var(--m);
   padding: var(--m);
-  width: fit-content;
+  max-width: fit-content;
 }
 .navigation-part-one {
   flex-basis: 75%;
@@ -21,9 +21,17 @@
   justify-content: space-evenly;
   gap: var(--m);
 }
+.navigation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s);
+}
 
 :hover.navigation-icon {
   cursor: pointer;
+  border: 1px solid var(--third);
+  padding: calc(var(--s) - 1px);
 }
 
 @media screen and (max-width: 480px) {

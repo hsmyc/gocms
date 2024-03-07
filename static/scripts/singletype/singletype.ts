@@ -1,34 +1,37 @@
 import { modalCloseFunction } from "../functions/modal.js";
 import { $, $$, on } from "../utils/aliases.js";
 import statemanager, { ComponentStateManager } from "atsmanager";
+import { Field, SingleType } from "../types.ts";
+import postSingleType from "../api/postsingletype.ts";
 
-type Field = {
-  name: string;
-}[];
 export default function SingleTypeField() {
   const manager = new statemanager();
   manager.addComponentState([]);
+
   const state: ComponentStateManager<Field> =
     manager.getStateManager("component");
+
   const subscribe = state.subscribe;
   const sfields = state.getState();
 
-  const button = $("#single_type_save_button");
+  const name = $("#single_type_name") as HTMLInputElement;
+  const item_save_button = $("#single_type_item_save_button");
   const closeButton = $(".modal__close");
+  const save_button = $("#single_type_save_button");
 
   function Fields() {
     return `<p>Selected Fields</p>
       ${sfields()
         ?.map((field) => {
           switch (field.name) {
-            case "text":
+            case "Text":
               return `<div class='single_type_field'>
               <label>${field.name}</label>
               </div>`;
-            case "bool":
-              return `<div><label>${field.name}<input type="checkbox"/></label></div>`;
-            case "richtext":
-              return `<div contenteditable="true" style="border: 1px solid #ccc; min-height: 100px;">${field.name}</div>`;
+            case "Boolean":
+              return `<div>${field.name}</div>`;
+            case "RichText":
+              return `<div>${field.name}</div>`;
             default:
               return `<div>Unsupported type</div>`;
           }
@@ -48,7 +51,10 @@ export default function SingleTypeField() {
     on(field, "click", (e) => {
       const target = e.target as HTMLInputElement;
       if (target.checked) {
-        state.setState([...(sfields() || []), { name: target.value }]);
+        state.setState([
+          ...(sfields() || []),
+          { name: target.value, type: target.dataset.type },
+        ]);
       } else {
         state.setState(
           (sfields() || []).filter((field) => field.name !== target.value)
@@ -64,14 +70,19 @@ export default function SingleTypeField() {
     state.setState([]);
   });
 
-  on(button, "click", () => {
+  on(item_save_button, "click", () => {
     $$(".single_type_field").forEach((field) => {
       (field as HTMLInputElement).checked = false;
     });
-    const data = {
-      fields: sfields()?.map((field) => field.name) || [],
-    };
-
     modalCloseFunction();
+  });
+
+  on(save_button, "click", async () => {
+    const data = {
+      name: name?.value,
+      fields: sfields(),
+    };
+    const res = await postSingleType(data as SingleType);
+    console.log(res);
   });
 }

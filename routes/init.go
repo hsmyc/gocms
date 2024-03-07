@@ -3,6 +3,7 @@ package routes
 func InitializeContext() {
 	Static()
 	Index()
-	SingleTypePost()
+	CreateSchema()
 	SingleTypeCreatePage()
+	CreateSingleType()
 }
