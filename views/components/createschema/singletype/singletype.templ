@@ -1,6 +1,25 @@
 package singletype
 
-import "hsmyc/gocms/views/components/uicomponents/modal"
+import (
+	"hsmyc/gocms/views/components/uicomponents/modal"
+	"hsmyc/gocms/models"
+	"hsmyc/gocms/views/components/createschema/singletype/singletypeitem"
+)
+
+var Fields = []models.Field{
+	{
+		Name: "Text",
+		Type: "string",
+	},
+	{
+		Name: "Boolean",
+		Type: "boolean",
+	},
+	{
+		Name: "Rich text",
+		Type: "string",
+	},
+}
 
 templ CreateSingleType() {
 	// TODO: Add form validation: id is required and must be unique and no spaces. Name is required.
@@ -31,29 +50,10 @@ templ CreateSingleType() {
 			@modal.Modal("st-modal") {
 				<div class="modal-body">
 					<button data-modal-close class="modal__close">X</button>
-					<div class="st-item">
-						<label for="text">Text</label>
-						<button data-modal-target="st-modal-item" class="st-modal-item-button">
-							<input type="checkbox" id="text" name="text" data-type="string" class="single_type_field" value="Text"/>
-						</button>
-					</div>
-					<div class="st-item">
-						<label for="boolean">Boolean</label>
-						<input type="checkbox" id="boolean" name="boolean" data-type="boolean" class="single_type_field" value="Boolean"/>
-					</div>
-					<div class="st-item">
-						<label for="richtext">Rich text</label>
-						<input type="checkbox" id="richtext" name="richtext" data-type="string" class="single_type_field" value="RichText"/>
-					</div>
+					for _, field := range Fields {
+						@singletypeitem.SingleTypeItem(field)
+					}
 					<button data-modal-close id="single_type_item_save_button" class="single_type_save_button">Save</button>
-					<div class="st-item-modal-container">
-						@modal.Modal("st-modal-item") {
-							<div class="modal-body">
-								<button data-modal-close class="modal__close">X</button>
-								<div>Test</div>
-							</div>
-						}
-					</div>
 				</div>
 			}
 		</div>

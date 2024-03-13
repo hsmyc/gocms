@@ -35,19 +35,34 @@
   border: 1px solid var(--secondary);
   padding: var(--m);
 }
-
-.st-modal-container {
-  position: relative;
+#st-modal {
+  position: absolute;
+  flex-direction: column;
+  gap: var(--m);
+  padding: var(--m);
+  box-shadow: var(--box-shadow);
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  background-color: var(--primary);
 }
-
+#st-modal-item {
+  position: absolute;
+  flex-direction: column;
+  gap: var(--s);
+  padding: var(--s);
+  box-shadow: var(--box-shadow);
+  top: -20vh;
+  left: -15vw;
+  min-width: 30vw;
+  width: 100%;
+  background-color: var(--secondary);
+}
 .st-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-}
-.st-item-modal-container {
-  position: relative;
 }
 
 .st-modal-button-container {
@@ -66,5 +81,11 @@
   .st-config-item {
     gap: var(--m);
     padding: var(--m);
+  }
+
+  #st-modal {
+    top: 0;
+    left: 20vw;
+    width: 50vw;
   }
 }

@@ -1,10 +1,25 @@
 package singletypeitem;
 
-import "hsmyc/gocms/models"
+import (
+	"hsmyc/gocms/models"
+	"hsmyc/gocms/views/components/uicomponents/modal"
+)
 
-templ SingleTypeItem(field models.Field, specs models.FieldSpecs) {
+templ SingleTypeItem(field models.Field) {
 	<div>
 		<label for={ field.Name }>{ field.Name }</label>
-		<input id={ field.Name } name={ field.Name } data-type={ field.Type } value={ field.Name }/>
+		<input type="checkbox" data-modal-target="st-modal-item" id={ field.Name } name={ field.Name } data-type={ field.Type } value={ field.Name }/>
+		<div class="st-item-modal-container">
+			@modal.Modal("st-modal-item") {
+				<div class="modal-body">
+					<button data-modal-close class="modal__close">X</button>
+					<label for="name">Required</label>
+					<input type="checkbox" id="is_required" name="is_required" value="true"/>
+					<label for="name">Unique</label>
+					<input type="checkbox" id="is_unique" name="is_unique" value="true"/>
+					<button data-modal-close>Save</button>
+				</div>
+			}
+		</div>
 	</div>
 }

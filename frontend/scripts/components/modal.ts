@@ -22,9 +22,12 @@ export function attachModalEvents() {
   const modalOpens = $$("[data-modal-target]");
   const modalCloses = $$("[data-modal-close]");
 
-  modalOpens.forEach((button) => {
-    on(button, "click", () => {
-      const modalId = button.getAttribute("data-modal-target");
+  modalOpens.forEach((element: Element) => {
+    on(element, "click", () => {
+      if (element instanceof HTMLInputElement && !element.checked) {
+        return;
+      }
+      const modalId = element.getAttribute("data-modal-target");
       modalOpenFunction(modalId);
     });
   });

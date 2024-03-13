@@ -4,15 +4,6 @@
 
 .modal--active {
   display: flex;
-  flex-direction: column;
-  gap: var(--m);
-  padding: var(--m);
-  box-shadow: var(--box-shadow);
-  background-color: var(--primary);
-  position: absolute;
-  width: 50vw;
-  top: 0;
-  left: 0;
 }
 
 .modal-body {
