@@ -1,8 +1,7 @@
 package modal
 
-templ Modal(buttonContent string) {
-	<button class="modal__open">{ buttonContent }</button>
-	<div class="modal">
+templ Modal( modalId string) {
+	<div class="modal" id={ modalId }>
 		{ children... }
 	</div>
 }

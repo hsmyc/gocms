@@ -3,6 +3,6 @@ package routes
 import "net/http"
 
 func Static() {
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	fs := http.FileServer(http.Dir("frontend"))
+	http.Handle("/frontend/", http.StripPrefix("/frontend/", fs))
 }

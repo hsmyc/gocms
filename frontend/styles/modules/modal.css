@@ -23,19 +23,10 @@
   gap: var(--m);
 }
 
-.modal__close {
+#modal__close {
   align-self: flex-end;
   padding: var(--s);
   border: none;
   border-radius: var(--xs);
   transition: all 0.3s ease-in-out;
-}
-.modal__open {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--s);
-  border: none;
-  border-radius: var(--xs);
-  cursor: pointer;
 }

@@ -3,25 +3,39 @@ package singletype
 import "hsmyc/gocms/views/components/uicomponents/modal"
 
 templ CreateSingleType() {
+	// TODO: Add form validation: id is required and must be unique and no spaces. Name is required.
 	<div class="st-container" id="single_type_container">
-		<h1>Create Single Type</h1>
-		<div class="st-name">
-			<label for="single_type_name">Name</label>
-			<input type="text" id="single_type_name" name="single_type_name"/>
+		<div class="st-config-container">
+			<h2>Settings</h2>
+			<div class="st-config">
+				<div class="st-config-item">
+					<label for="single_type_id">API ID</label>
+					<input type="text" id="single_type_id" name="single_type_id"/>
+				</div>
+				<div class="st-config-item">
+					<label for="single_type_name">Name</label>
+					<input type="text" id="single_type_name" name="single_type_name"/>
+				</div>
+			</div>
 		</div>
 		<div>
-			<p>Selected fields:</p>
+			<h2>Selected fields:</h2>
 			<div id="single_type_fields" class="st-fields">
 				<p>No fields selected</p>
 			</div>
+			<div class="st-modal-button-container">
+				<i data-modal-target="st-modal" class="fa-solid fa-file-circle-plus st-modal-button modal__open"></i>
+			</div>
 		</div>
 		<div class="st-modal-container">
-			@modal.Modal("Add") {
+			@modal.Modal("st-modal") {
 				<div class="modal-body">
-					<button class="modal__close">X</button>
+					<button data-modal-close class="modal__close">X</button>
 					<div class="st-item">
 						<label for="text">Text</label>
-						<input type="checkbox" id="text" name="text" data-type="string" class="single_type_field" value="Text"/>
+						<button data-modal-target="st-modal-item" class="st-modal-item-button">
+							<input type="checkbox" id="text" name="text" data-type="string" class="single_type_field" value="Text"/>
+						</button>
 					</div>
 					<div class="st-item">
 						<label for="boolean">Boolean</label>
@@ -31,7 +45,15 @@ templ CreateSingleType() {
 						<label for="richtext">Rich text</label>
 						<input type="checkbox" id="richtext" name="richtext" data-type="string" class="single_type_field" value="RichText"/>
 					</div>
-					<button id="single_type_item_save_button" class="single_type_save_button">Save</button>
+					<button data-modal-close id="single_type_item_save_button" class="single_type_save_button">Save</button>
+					<div class="st-item-modal-container">
+						@modal.Modal("st-modal-item") {
+							<div class="modal-body">
+								<button data-modal-close class="modal__close">X</button>
+								<div>Test</div>
+							</div>
+						}
+					</div>
 				</div>
 			}
 		</div>

@@ -8,10 +8,10 @@ import (
 
 func ESBuilder() {
 	result := api.Build(api.BuildOptions{
-		EntryPoints:      []string{"./static/scripts/script.ts", "./static/styles/global.css"},
+		EntryPoints:      []string{"./frontend/scripts/script.ts", "./frontend/styles/global.css"},
 		Bundle:           true,
 		MinifyWhitespace: true,
-		Outdir:           "./static/dist",
+		Outdir:           "./frontend/dist",
 		Write:            true,
 		GlobalName:       "App",
 		Format:           api.FormatESModule,

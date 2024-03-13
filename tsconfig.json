@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./static/dist",
-    "rootDir": "./static/scripts/",
+    "outDir": "./frontend/dist",
+    "rootDir": "./frontend/scripts/",
     "noImplicitAny": true,
     "module": "ES2022",
     "target": "es6",
@@ -13,9 +13,9 @@
     "allowImportingTsExtensions": true
   },
   "include": [
-    "static/scripts/raw/**/*.ts",
-    "static/scripts/types.ts",
-    "static/scripts/script.ts"
+    "frontend/scripts/raw/**/*.ts",
+    "frontend/scripts/types.ts",
+    "frontend/scripts/script.ts"
   ],
-  "exclude": ["./static/scripts/compiled"]
+  "exclude": ["./frontend/scripts/compiled"]
 }

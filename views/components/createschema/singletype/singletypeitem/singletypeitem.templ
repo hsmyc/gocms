@@ -1,0 +1,10 @@
+package singletypeitem;
+
+import "hsmyc/gocms/models"
+
+templ SingleTypeItem(field models.Field, specs models.FieldSpecs) {
+	<div>
+		<label for={ field.Name }>{ field.Name }</label>
+		<input id={ field.Name } name={ field.Name } data-type={ field.Type } value={ field.Name }/>
+	</div>
+}

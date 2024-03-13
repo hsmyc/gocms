@@ -1,4 +1,3 @@
-import { modalCloseFunction } from "../functions/modal.js";
 import { $, $$, on } from "../utils/aliases.js";
 import statemanager, { ComponentStateManager } from "atsmanager";
 import { Field, SingleType } from "../types.ts";
@@ -14,6 +13,7 @@ export default function SingleTypeField() {
   const subscribe = state.subscribe;
   const sfields = state.getState();
 
+  const apiID = $("#single_type_id") as HTMLInputElement;
   const name = $("#single_type_name") as HTMLInputElement;
   const item_save_button = $("#single_type_item_save_button");
   const closeButton = $(".modal__close");
@@ -74,11 +74,11 @@ export default function SingleTypeField() {
     $$(".single_type_field").forEach((field) => {
       (field as HTMLInputElement).checked = false;
     });
-    modalCloseFunction();
   });
 
   on(save_button, "click", async () => {
     const data = {
+      apiId: apiID?.value,
       name: name?.value,
       fields: sfields(),
     };
